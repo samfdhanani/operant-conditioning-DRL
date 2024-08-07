@@ -4,7 +4,7 @@ In the DRL assay the mice are presented with one lever the entire session which 
 ### Apparatus Information
 The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St. Albans, VT) and MedScripts were used to run the program (Ward et al., 2015).
 ### Script Outputs
-The script outputs a csv file with the following data:
+DRL.py
 - subject number from the Med Associates data file
 - program name from the Med Associates data file
 - session type, might exclude
@@ -20,4 +20,27 @@ The script outputs a csv file with the following data:
 - binned latencies within a user defined range
 - a list of all latencies in the program
 
+BurstAnalysis.py
+- Date
+- Subject
+- Genotype
+- Sex
+- FirstLatency
+- AverageLatency
+- SessionTime
+- Program
+- NumberOfRewards
+- no headpoke count
+- Lever Press
+- Reward Rate
+- lever press no reward
+- Rate (LP/SessTime)
+- all latency
+- plot
+- bursts
+- number of bursts
+- burst sums
+- average burst time
+- sum of all bursts
+- average_burst_press_count
 
