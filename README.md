@@ -1,4 +1,4 @@
-A massive thank you to [@Talaa202] for helping me write this code!
+A massive thank you to @Talaa202 (https://github.com/Talaa202) for helping me write this code!
 
 ## Differential Reinforcement of Low Rate (DRL)
 ### Task Details
