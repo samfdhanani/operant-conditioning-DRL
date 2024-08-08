@@ -9,7 +9,7 @@ filelist = []
 pathslist = []
 
 datapath = os.path.normpath("/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/DRL22")
-IDList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+IDList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
 
 for subdir, dirs, files in sorted(os.walk(datapath)):
     filelist.append(files)
@@ -150,84 +150,34 @@ def data_construct(data):
 
     return(latency, average, Sess_time, len(Reward), len(LeverPress), rate, Reward_Efficiency, bursts, binned_latencies, LA)
 
-def session_type(progline, sub):
-    # sess_type corresponds to each time interval
-    sess_type = None
-    if progline == 'MCLeftDRL2' or progline == 'MCRightDRL2':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 0
-    elif progline == 'MCLeftDRL4' or progline == 'MCRightDRL4':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 1
-    elif progline == 'MCLeftDRL6' or progline == 'MCRightDRL6':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 2
-    elif progline == 'MCLeftDRL8' or progline == 'MCRightDRL8':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 3
-    elif progline == 'MCLeftDRL10' or progline == 'MCRightDRL10':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 4
-    elif progline == 'MCLeftDRL12' or progline == 'MCRightDRL12':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 5
-    elif progline == 'MCLeftDRL14' or progline == 'MCRightDRL14':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 6
-    elif progline == 'MCLeftDRL16' or progline == 'MCRightDRL16':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 7
-    elif progline == 'MCLeftDRL18' or progline == 'MCRightDRL18':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 8
-    elif progline == 'MCLeftDRL20' or progline == 'MCRightDRL20':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 9
-    elif progline == 'MCLeftDRL22' or progline == 'MCRightDRL22':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 10
-    elif progline == 'MCLeftDRL24' or progline == 'MCRightDRL24':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 11
-    elif progline == 'MCLeftDRL26' or progline == 'MCRightDRL26':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 12
-    elif progline == 'MCLeftDRL28' or progline == 'MCRightDRL28':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 13
-    elif progline == 'MCLeftDRL30' or progline == 'MCRightDRL30':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 14
-    elif progline == 'MCLeftDRL32' or progline == 'MCRightDRL32':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 15
-    elif progline == 'MCLeftDRL34' or progline == 'MCRightDRL34':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 16
-    elif progline == 'MCLeftDRL36' or progline == 'MCRightDRL36':
-        if sub in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
-            sess_type = 17
-    return sess_type
 
 def genotype(sub):
-    # 1 = WT and 2 = Het
     g_type = None
-    if sub == 3 or sub == 4 or sub == 5 or sub == 7 or sub == 11 or sub == 12 or sub == 13 or sub == 15:
-        g_type = 1
-    elif sub == 1 or sub == 2 or sub == 6 or sub == 8 or sub == 9 or sub == 10 or sub == 14 or sub == 16:
-        g_type = 2
+    if sub == 4 or sub == 5 or sub == 7 or sub == 8 or sub == 9 or sub == 11 or sub == 12 or sub == 13 or sub == 17 or sub == 19 or sub == 21 or sub == 22 or sub == 25 or sub == 28 or sub == 29 or sub == 31:
+        g_type = 'WT'
+    elif sub == 1 or sub == 2 or sub == 3 or sub == 6 or sub == 10 or sub == 14 or sub == 15 or sub == 16 or sub == 18 or sub == 20 or sub == 23 or sub == 24 or sub == 26 or sub == 27 or sub == 30 or sub == 32:
+        g_type = 'Het'
 
     return g_type
+
+def sex(sub):
+    s_type = None
+    if sub == 1 or sub == 2 or sub == 3 or sub == 4 or sub == 5 or sub == 6 or sub == 7 or sub == 8 or sub == 9 or sub == 10 or sub == 11 or sub == 12 or sub == 13 or sub == 14 or sub == 15 or sub == 16:
+        s_type = 'M'
+    elif sub == 17 or sub == 18 or sub == 19 or sub == 20 or sub == 21 or sub == 22 or sub == 23 or sub == 24 or sub == 25 or sub == 26 or sub == 27 or sub == 28 or sub == 29 or sub == 30 or sub == 31 or sub == 32:
+        s_type = 'F'
+
+    return s_type
 
 
 df_ind = 0 #index variable, add one everytime we run through a subject
-sus_attn_df = pd.DataFrame(columns = ['Date', 'Subject', 'Program', 'Session Type', 'Genotype', 'FirstLatency', 'AverageLatency', 'SessionTime', 'NumberOfRewards', 'Lever Press', 'Rate', 'Reward Efficiency', 'Burst','binned_latencies','all latency'])
-def new_func(session_type, ID, progline):
-    sess_type = session_type(progline, ID)
-    return sess_type
+sus_attn_df = pd.DataFrame(columns = ['Date', 'Subject', 'Program', 'Genotype', 'Sex', 'FirstLatency', 'AverageLatency', 'SessionTime', 'NumberOfRewards', 'Lever Press', 'Rate', 'Reward Efficiency', 'Burst','binned_latencies','all latency'])
 def new_func(g_type, ID):
     g_type = genotype(ID)
     return g_type
+def new_func(s_type, ID):
+    s_type = sex(ID)
+    return s_type
 
 for dirs in pathslist:
 
@@ -240,10 +190,10 @@ for dirs in pathslist:
         if len(data) == 0:
             continue
         latency, num_average, Sess_time, num_Rewards, num_LeverPress, rate, Reward_Efficiency, bursts,binned_latencies, LA = data_construct(data) #data construct, putting that all here
-        sess_type = session_type (progline, ID)
         g_type = genotype(ID)
+        s_type = sex(ID)
 
-        sus_attn_df.loc[df_ind] = [date, Full_ID, progline, sess_type, g_type, latency, num_average, Sess_time, num_Rewards, num_LeverPress, rate, Reward_Efficiency, bursts, binned_latencies, LA ] #assigning variables one by one
+        sus_attn_df.loc[df_ind] = [date, Full_ID, progline, g_type, s_type, latency, num_average, Sess_time, num_Rewards, num_LeverPress, rate, Reward_Efficiency, bursts, binned_latencies, LA ] #assigning variables one by one
         df_ind += 1 #location zero is populated with variables above, add one each time for it to be sequential
 
 sus_attn_df.to_csv(datapath + "_Agg.csv")
