@@ -22,8 +22,8 @@ The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St.
 - Lever Press: total number of lever presses
 - Rate: rate of lever presses per second
 - Reward Efficiency: presses per reward
-- Burst: lever press latencies less than a user defined time in seconds
-- binned latencies: binned latencies within a user defined range
+- Burst: lever press latencies less than or equal to 1 second
+- binned latencies: binned latencies from 0 to 1 second with a width of 0.1 seconds
 - all latency: a list of all latencies in the program
 
 **BurstAnalysis.py**
