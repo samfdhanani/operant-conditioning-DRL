@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 filelist = []
 pathslist = []
 
-datapath = os.path.normpath("/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/DRL22")
-IDList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+datapath = os.path.normpath("/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/Cohort_Folder")
+IDList = [1, 2, 3, 4]
 
 for subdir, dirs, files in sorted(os.walk(datapath)):
     filelist.append(files)
@@ -152,23 +152,23 @@ def data_construct(data):
 
 
 def genotype(sub):
+    # 1 = WT and 2 = Het
     g_type = None
-    if sub == 4 or sub == 5 or sub == 7 or sub == 8 or sub == 9 or sub == 11 or sub == 12 or sub == 13 or sub == 17 or sub == 19 or sub == 21 or sub == 22 or sub == 25 or sub == 28 or sub == 29 or sub == 31:
-        g_type = 'WT'
-    elif sub == 1 or sub == 2 or sub == 3 or sub == 6 or sub == 10 or sub == 14 or sub == 15 or sub == 16 or sub == 18 or sub == 20 or sub == 23 or sub == 24 or sub == 26 or sub == 27 or sub == 30 or sub == 32:
-        g_type = 'Het'
+    if sub == 1 or sub == 2:
+        g_type = 'control'
+    elif sub == 3 or sub == 4:
+        g_type = 'experimental'
 
     return g_type
 
 def sex(sub):
     s_type = None
-    if sub == 1 or sub == 2 or sub == 3 or sub == 4 or sub == 5 or sub == 6 or sub == 7 or sub == 8 or sub == 9 or sub == 10 or sub == 11 or sub == 12 or sub == 13 or sub == 14 or sub == 15 or sub == 16:
-        s_type = 'M'
-    elif sub == 17 or sub == 18 or sub == 19 or sub == 20 or sub == 21 or sub == 22 or sub == 23 or sub == 24 or sub == 25 or sub == 26 or sub == 27 or sub == 28 or sub == 29 or sub == 30 or sub == 31 or sub == 32:
-        s_type = 'F'
+    if sub == 1 or sub == 3:
+        s_type = 'Male'
+    elif sub == 2 or sub == 4:
+        s_type = 'Female'
 
     return s_type
-
 
 df_ind = 0 #index variable, add one everytime we run through a subject
 sus_attn_df = pd.DataFrame(columns = ['Date', 'Subject', 'Program', 'Genotype', 'Sex', 'FirstLatency', 'AverageLatency', 'SessionTime', 'NumberOfRewards', 'Lever Press', 'Rate', 'Reward Efficiency', 'Burst','binned_latencies','all latency'])
