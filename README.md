@@ -26,8 +26,6 @@ The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St.
 
 **BurstAnalysis.py**
 
-'no headpoke count','Lever Press', 'Reward Rate', 'lever press no reward', 'Rate (LP/SessTime)', 'all latency','plot','bursts','number of bursts', 'burst sums','average burst time', 'sum of all bursts', 'average_burst_press_count'])
-
 - Date: date of session
 - Subject: subject number from the Med Associates data file
 - Genotype: assigns a value to the subject based on a list defined by the user
@@ -55,4 +53,8 @@ The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St.
 
 - calculates the average value across multiple session per subject
 - calculates the averages for: the number of bursts, sum of all bursts, average burst time, average_burst_press_count
+
+**Raster_All_GTandSex.py**
+- creates a raster plot of all the lever presses made during a session
+- creates raster plots based on date of the session and make sure to change the max_x_value based on your session time
 
