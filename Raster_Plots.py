@@ -6,7 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import os
 
 # Read data from CSV file
-csv_file = "/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/CohF_DRHburst1-2s_030724.csv"
+csv_file = "filepath/data.csv"
 plot_date = "02-23-24"  # Specify date you want to plot
 x = 2500  # Maximum value for the x-axis
 
