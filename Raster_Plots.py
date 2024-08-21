@@ -10,7 +10,7 @@ csv_file = "filepath/data.csv"
 plot_date = "02-23-24"  # Specify date you want to plot
 x = 2500  # Maximum value for the x-axis
 
-pdf_file_path = "/Users/samdhanani/Desktop/06-05-24.pdf"
+pdf_file_path = "/filepath/06-05-24.pdf"
 pdf_pages = PdfPages(pdf_file_path)
 
 with open(csv_file, 'r') as file:
