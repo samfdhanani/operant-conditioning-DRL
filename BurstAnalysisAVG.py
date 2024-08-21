@@ -18,7 +18,7 @@ for column in averages:
 # group data by the following columns and then calculate the average for each group
 avg_df = avg_df.groupby(['Program', 'Subject', 'Genotype', 'Sex'])[averages + ['Date']].agg({'Date': 'first', **{col: 'mean' for col in averages}}).reset_index()
 
-csv_filepath = "/Users/samdhanani/Dropbox/Muhle Lab/Mouse_files/Cohort F (operant)/DRH/Raw_Operant_Data/CohF_AVGTEST.csv"
+csv_filepath = "/filepath/Cohort_AVGTEST.csv"
 
 avg_df.to_csv(csv_filepath, index=False)
 
