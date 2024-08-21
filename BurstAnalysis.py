@@ -22,11 +22,11 @@ pathslist.pop(0) # get rid of elements in index zero
 
 # this function is used to isolate and analyze a specific folder/date from the data; run at the botton of this script
 def query(pathslist, querydate): 
-    folderdates = []
-    for x in pathslist:
+    folderdates = [] # stores dates from folder path
+    for x in pathslist: # goes through each path in pathslist
         folderdates.append(os.path.basename(os.path.normpath(x))) # extracts the date from the filepath
 
-    querypaths = []
+    querypaths = [] # stores paths that match query dates
 
     for i in range(0, len(folderdates)):
         if folderdates[i] == querydate: # 
