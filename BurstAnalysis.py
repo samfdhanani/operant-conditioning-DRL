@@ -29,7 +29,7 @@ def query(pathslist, querydate):
     querypaths = [] # stores paths that match query dates
 
     for i in range(0, len(folderdates)):
-        if folderdates[i] == querydate: # 
+        if folderdates[i] == querydate: 
             querypaths.append(pathslist[i]) # pull specific date
 
     return(querypaths)
