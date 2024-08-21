@@ -27,7 +27,7 @@ The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St.
 - Burst Latencies: lever press latencies less than or equal to 1 second
 - Binned Latencies: binned latencies from 0 to 1 second with a width of 0.1 seconds
 - All Latencies: a list of all latencies in the program
-- Missed Headpokes: number of headpokes not made during dipper presentation
+- Headpokes Missed: number of times when there was no headpoke during dipper presentation
 - Raster Plot Values: a list of the timestamps of latencies in seconds
 
 **BurstAnalysis.py**
@@ -38,10 +38,10 @@ The operant boxes were from Med Associates Inc. (Model 1820; Med Associates, St.
 - Sex: assigns a value to the subject based on a list defined by the user
 - Program: program name from the Med Associates data file
 - First Latency: the first lever press can be made within any time interval and is excluded in the rest of the latency measures
-- AveragevLatency: average latency between lever presses 
-- SessionvTIme: total session time
-- NumbervOfvRewards: number of rewards achieved
-- Headpokes Missed: number of headpokes not made when a dipper was presented
+- Average Latency: average latency between lever presses 
+- Session Time: total session time
+- Number Of Rewards: number of rewards achieved
+- Headpokes Missed: number of times when there was no headpoke during dipper presentation
 - Lever Presses: total number of lever presses
 - Reward Efficiency: presses per reward
 - Lever Presses Made Without a Reward: lever presses made within the designated time interval
