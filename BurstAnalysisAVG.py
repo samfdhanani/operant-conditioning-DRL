@@ -4,26 +4,22 @@ import numpy as np
 from statistics import mean
 import matplotlib.pyplot as plt
 
-averages_filepath = "/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/burst_file.csv"  
-averages_df = pd.read_csv(averages_filepath)
+datapath = "/filepath/data.csv"  
+avg_df = pd.read_csv(datapath)
 
 # List of columns to calculate averages for
-columns_to_average = ['number of bursts', 'sum of all bursts', 'average burst time','average_burst_press_count']
+averages = ['number of bursts', 'sum of all bursts', 'average burst time','average_burst_press_count']
 
-for column in columns_to_average:
-    if averages_df[column].dtype == 'object':
-        averages_df[column] = averages_df[column].str.replace(r'[^0-9.]', '', regex=True)
-        averages_df[column] = pd.to_numeric(averages_df[column], errors='coerce')
+for column in averages:
+    if avg_df[column].dtype == 'object': # selects columns that match the names in averages
+        avg_df[column] = avg_df[column].str.replace(r'[^0-9.]', '', regex=True) # in case brackets are left in the data this works around that, anything not a digit or period is removed
+        avg_df[column] = pd.to_numeric(avg_df[column], errors='coerce') # turns string into numeric data
 
-averages_df['Program'] = averages_df['Program'].str.extract('(\d+)')
-averages_df['Program'] = pd.to_numeric(averages_df['Program'], errors='coerce')
+# group data by the following columns and then calculate the average for each group
+avg_df = avg_df.groupby(['Program', 'Subject', 'Genotype', 'Sex'])[averages + ['Date']].agg({'Date': 'first', **{col: 'mean' for col in averages}}).reset_index()
 
-grouped_averages_df = averages_df.groupby(['Program', 'Subject', 'Genotype', 'Sex'])[
-    columns_to_average + ['Date']
-].agg({'Date': 'first', **{col: 'mean' for col in columns_to_average}}).reset_index()
+csv_filepath = "/Users/samdhanani/Dropbox/Muhle Lab/Mouse_files/Cohort F (operant)/DRH/Raw_Operant_Data/CohF_AVGTEST.csv"
 
-csv_filepath = "/Users/samdhanani/Desktop/MuhleLab/Operant_Data_Folders/CohF_DRH_AVGburst2-3s_030724.csv"
+avg_df.to_csv(csv_filepath, index=False)
 
-grouped_averages_df.to_csv(csv_filepath, index=False)
-
-print(grouped_averages_df)
+print(avg_df)
